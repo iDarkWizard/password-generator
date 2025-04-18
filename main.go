@@ -26,12 +26,12 @@ func main() {
 	}
 
 	for i := 0; i < *number; i++ {
-		pass := generatePassword(*length, charset)
+		pass := GeneratePassword(*length, charset)
 		fmt.Println(pass)
 	}
 }
 
-func generatePassword(length int, charset string) string {
+func GeneratePassword(length int, charset string) string {
 	password := ""
 	for i := 0; i < length; i++ {
 		randIndex, _ := rand.Int(rand.Reader, big.NewInt(int64(len(charset))))
